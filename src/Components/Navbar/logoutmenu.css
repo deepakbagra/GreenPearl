@@ -1,0 +1,49 @@
+.log-dropbtn {
+    background-color: inherit; 
+     
+    padding: 16px;
+    font-size: 12px;
+    border: none;
+    color: #fafafa;
+    text-transform: none; 
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .log-dropdown {
+    position: relative;
+    display: inline-block;  
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .log-dropdown-content {
+        
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 140px;    
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
+    z-index: auto;
+   
+     
+  }
+  
+  /* Links inside the dropdown */
+  .log-dropdown-content-btn {
+    color: rgb(12, 11, 11);
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight: 600;  
+    display: block;
+    border: none; 
+    background-color: white;
+    cursor: pointer;
+    
+  }
+  
+  /* Change color of dropdown links on hover */
+  .log-dropdown-content-btn:hover {color: blue; transition-delay: 100ms; }
+  
+  /* Show the dropdown menu on hover */
+  .log-dropdown:hover .log-dropdown-content {  display:block;}
+  
+  
