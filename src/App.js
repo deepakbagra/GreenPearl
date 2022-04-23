@@ -7,7 +7,7 @@ import Navbar from './Components/Navbar/Navbar';
 import SignIn from './Components/Auth/SignIn';
 import SignUp from './Components/Auth/SignUp';
 import Footer from './Components/Footer/Footer';
-import AdminPanel from './Components/Navbar/AdminPanel';
+
 import WhatIsAutism from './Components/AboutAutism/WhatIsAutism';
 import PostEvent from './Components/EVENTS/postEvent/EventForm';
 import ViewAllEvents from './Components/EVENTS/viewEvents/AllEvents';
@@ -27,8 +27,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home />}></Route>         
         <Route exact path='/auth/signin' element={<SignIn />}></Route>
-        <Route exact path='/auth/signup' element={<SignUp />}></Route>
-        <Route exact path='/auth/admin' element={<AdminPanel />}></Route>
+        <Route exact path='/auth/signup' element={<SignUp />}></Route>        
 
         <Route exact path='/aboutautism/whatisautism' element={<WhatIsAutism />}></Route>
 

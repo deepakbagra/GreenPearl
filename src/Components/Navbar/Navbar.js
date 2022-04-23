@@ -83,10 +83,12 @@ const Header = () => {
             <LogoutMenu logout={logout} />
           </Button>
              :  (screenSize > 600 ? 
-              <div className={classes.account}> 
+            <div className={classes.account}>
+              <a href="http://81.68.206.216:10010/" target="_blank" rel="noreferrer"><Button className={classes.auth} variant='text' >Admin Dashboard</Button>
+              </a>
                 <Button className={classes.auth} component={Link} to='/auth/signin' variant='text' >Sign In</Button>
                 <Button className={classes.auth} component={Link} to='/auth/signup' variant='text' >Create a new Account</Button>
-                                
+                   
               </div> :  <LoginMenu /> 
             )
           }
