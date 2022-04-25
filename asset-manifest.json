@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/GreenPearl/static/css/main.646d4388.css",
-    "main.js": "/GreenPearl/static/js/main.2e02f166.js",
+    "main.css": "/GreenPearl/static/css/main.0fdd67f2.css",
+    "main.js": "/GreenPearl/static/js/main.d907822b.js",
     "static/media/homePagePic.jpg": "/GreenPearl/static/media/homePagePic.1112d661b715279ffe91.jpg",
     "static/media/LOGO.png": "/GreenPearl/static/media/LOGO.34dd6601b941e1310277.png",
     "index.html": "/GreenPearl/index.html",
-    "main.646d4388.css.map": "/GreenPearl/static/css/main.646d4388.css.map",
-    "main.2e02f166.js.map": "/GreenPearl/static/js/main.2e02f166.js.map"
+    "main.0fdd67f2.css.map": "/GreenPearl/static/css/main.0fdd67f2.css.map",
+    "main.d907822b.js.map": "/GreenPearl/static/js/main.d907822b.js.map"
   },
   "entrypoints": [
-    "static/css/main.646d4388.css",
-    "static/js/main.2e02f166.js"
+    "static/css/main.0fdd67f2.css",
+    "static/js/main.d907822b.js"
   ]
 }
