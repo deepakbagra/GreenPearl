@@ -7,7 +7,8 @@ import { useDispatch } from 'react-redux';
 
 import { listServices } from '../../../Redux/Actions/serviceActions';
 
-const SearchBar = () => {
+const SearchBar = ({ page }) => {
+  
     const [input, setInput] = useState('');
     
     const classes = useStyles();    
@@ -27,9 +28,9 @@ const SearchBar = () => {
 
     setInput('');
 
-    dispatch(listServices());
+    dispatch(listServices(page));
 
-  },[dispatch]);
+  },[dispatch, page]);
   
   useEffect(() => {
 

@@ -9,14 +9,20 @@ import SignUp from './Components/Auth/SignUp';
 import Footer from './Components/Footer/Footer';
 
 import WhatIsAutism from './Components/AboutAutism/WhatIsAutism';
+
 import PostEvent from './Components/EVENTS/postEvent/EventForm';
 import ViewAllEvents from './Components/EVENTS/viewEvents/AllEvents';
 import ViewUserEvents from './Components/EVENTS/viewEvents/UserEvents';
 import ViewEvent from './Components/EVENTS/events/ViewChosenEvent';
+
 import PostService from './Components/SERVICES/postService/ServiceForm';
 import ViewAllServices from './Components/SERVICES/viewServices/AllServices';
 import ViewService from './Components/SERVICES/services/ViewChosenService';
 import ViewUserServices from './Components/SERVICES/viewServices/UserServices';
+
+import BlogDashboard from './Components/BLOGS/blogDashboard';
+import BlogsByClass from './Components/BLOGS/blogsByClass/BlogsByClass';
+import PostBlog from './Components/BLOGS/postBlog/BlogForm';
 
 function App() {
   
@@ -40,6 +46,13 @@ function App() {
         <Route exact path='/services/show-services' element={<ViewAllServices />}></Route>
         <Route exact path='/services/show-service' element={<ViewService />}></Route>
         <Route exact path='/services/show-user-services' element={<ViewUserServices />}></Route>
+
+        <Route exact path='/blog' element={<BlogDashboard />}></Route>
+        <Route exact path='/class/show-blogs' element={<BlogsByClass />}></Route>
+        <Route exact path='/class/create-blog' element={<PostBlog />}></Route>
+
+
+        
        
 
         

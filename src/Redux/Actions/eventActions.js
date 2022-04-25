@@ -5,13 +5,13 @@ import * as api from '../../API';
 
 // show all events 
 
-export const listEvents = () => async (dispatch) => {  
+export const listEvents = (pageNumber) => async (dispatch) => {  
     try {
-        const { data } = await api.listEvents();      
+        const { data } = await api.listEvents(pageNumber);      
        console.log('list events', data)
         dispatch({
             type: Actions.LIST_ALL_EVENTS,
-            payload: data.data
+            payload: data?.data
         });
     } catch (error) {
         console.log(error);

@@ -31,7 +31,7 @@ api.interceptors.request.use((req) => {
 
 // events related
 
-export const listEvents = () => api.get('/event');
+export const listEvents = (pageNumber) => api.get(`/event/page?auditStatus=1&pageNumber=${pageNumber}&pageSize=3`);
 export const viewEvent = (id) => api.get(`/event/${id}`);
 export const listUserEvents = () => api.get('/event/user');
 export const joinEvent = (id) => api.patch(`/event/${id}/join`);
@@ -41,10 +41,17 @@ export const deleteEvent = (id) => api.delete(`/event/${id}`);
 
 // service related
 export const createService = (newPost) => api.post('/service', newPost);
-export const listServices = () => api.get('/service');
+export const listServices = (pageNumber) => api.get(`/service/page?auditStatus=1&pageNumber=${pageNumber}&pageSize=3`);
 export const viewService = (id) => api.get(`/service/${id}`);
 export const deleteService = (id) => api.delete(`/service/${id}`);
 export const listUserServices = () => api.get('/service/user');
+
+
+// blog related
+export const createBlog = (newPost) => api.post('/blog', newPost);
+export const listClasses = () => api.get('/blog/class');
+export const viewBlogsByClass = (id, pageNumber) => api.get(`/blog/class/${id}/page?pageNumber=${pageNumber}&pageSize=3`);
+
 
 // auth related
 

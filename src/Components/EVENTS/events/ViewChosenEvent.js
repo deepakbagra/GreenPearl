@@ -27,6 +27,7 @@ const ViewChosenEvent = () => {
   console.log('view selected event', event);  
  
   const data = JSON.parse(localStorage.getItem('userInfo'));
+  const user = JSON.parse(localStorage.getItem('profile'));
 
   // to check whether event creator is viewing his or her own event
   const isMyOwnEvent = () => {
@@ -71,7 +72,9 @@ const ViewChosenEvent = () => {
   }
 
   const isJoin = () => {
-    if (isMyOwnEvent()) {
+    if (!user) return true;
+
+    else if (isMyOwnEvent()) {
       return true;
     }
     else if (isAlreadyJoiner()) {
@@ -144,7 +147,7 @@ const ViewChosenEvent = () => {
             <LogoutIcon className={classes.btn} />
             <Typography className={classes.btnText}>exit</Typography>
           </Button>
-                          
+          
           <Button className={classes.btn} disabled={isJoin()} color='secondary' onClick={onSubmitJoinEvent}>
             <SubscriptionsIcon className={classes.btn} />
             <Typography className={classes.btnText}>join</Typography>

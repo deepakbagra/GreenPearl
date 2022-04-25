@@ -16,6 +16,9 @@ import services from './services/serviceReducers';
 import viewService from './services/viewServiceReducer';
 import viewUserServices from './services/userServicesReducer';
 
+import classes from './blogs/classReducers';
+import blogs from './blogs/blogReducer';
+
 
 export default combineReducers(
     {
@@ -32,5 +35,7 @@ export default combineReducers(
         services,
         viewService,
         viewUserServices,
+        classes,
+        blogs,
     }
 );

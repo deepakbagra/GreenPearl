@@ -9,6 +9,9 @@ import useStyles from './styles';
 const UserServices = () => {
   
   const services = useSelector(state => state.viewUserServices);
+
+  // filtering audited services
+  const auditedServices = services?.filter((service) => service.auditStatus === 1);
   
   const classes = useStyles();
 
@@ -27,7 +30,7 @@ const UserServices = () => {
         <hr style={{ marginTop: '1em' }}></hr>
       <Grid container alignItems='stretch' spacing={5} style={{ padding: '0em', marginTop: '1em' }} >
              
-        {services?.map((service) => (
+        {auditedServices?.map((service) => (
                   <Grid item                       
                        xs={12} sm={6} md={4} >
                       <Service service={service} />

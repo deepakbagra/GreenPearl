@@ -132,7 +132,7 @@ export default makeStyles((theme) => ({
     },    
     topNavLinks: {        
         display: 'flex',
-        marginLeft: '-12em'
+        
     },
     topNavLinksButton: {
         textTransform: 'none',         
@@ -141,7 +141,7 @@ export default makeStyles((theme) => ({
     },
     account: {        
         display: 'flex', 
-        marginRight: '-8em'
+        marginRight: '-5em'
     },
     modal: {
        backgroundColor: 'rgba(0,0,0,0.7)',

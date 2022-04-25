@@ -33,16 +33,32 @@ export const viewService = (id) => async (dispatch) => {
         console.log(error);
     }
 }
-// show all services posted by a signed user
+// show all blog classes 
 
-export const listUserServices = () => async (dispatch) => {  
+export const listClasses = () => async (dispatch) => {  
     try {
-        const { data } = await api.listUserServices();
-       console.log('user services action: ', data.data)
-       
+        const { data } = await api.listClasses();
+        console.log('list blog class action: ', data);       
       
         dispatch({
-            type: Actions.LIST_USER_SERVICES,
+            type: Actions.LIST_CLASSES,
+            payload: data.data
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// show all blogs of a class 
+
+export const viewBlogsByClass = (id, page) => async (dispatch) => {  
+    try {
+        const { data } = await api.viewBlogsByClass(id, page);
+        console.log('list blogs of a class action: ', data); 
+        console.log('page number class action: ', page); 
+      
+        dispatch({
+            type: Actions.LIST_CLASS_BLOGS,
             payload: data.data
         });
     } catch (error) {
@@ -52,15 +68,14 @@ export const listUserServices = () => async (dispatch) => {
 
 // create a new event by a user
 
-export const createService = (post) => async (dispatch) => {
+export const createBlog = (post) => async (dispatch) => {
     try {
-        const { data } = await api.createService(post);
+        const { data } = await api.createBlog(post);
         if (data?.code === 200) {
-            alert('Your service has been posted successfully.');
+            alert('Your blog has been posted successfully.');
         }
         dispatch({
-            type: Actions.CREATE_SERVICE,
-            
+            type: Actions.CREATE_BLOG,            
         })
     } catch (error) {
         console.log(error);
@@ -68,28 +83,28 @@ export const createService = (post) => async (dispatch) => {
 }
 // delete a service by a service creator
 
-export const deleteService = (id) => async (dispatch) => {    
-    try {        
-        const response = await api.deleteService(id);
+// export const deleteService = (id) => async (dispatch) => {    
+//     try {        
+//         const response = await api.deleteService(id);
 
-        console.log('delete service action', response);
+//         console.log('delete service action', response);
         
-        if (response?.data?.code === 401) {
-            alert('Not authorized to delete this event.')
-        }
+//         if (response?.data?.code === 401) {
+//             alert('Not authorized to delete this event.')
+//         }
 
-        if (response?.data?.code === 200) {
-            dispatch({
-                type: Actions.DELETE_EVENT,
-                payload: id
-            });
-        }       
+//         if (response?.data?.code === 200) {
+//             dispatch({
+//                 type: Actions.DELETE_EVENT,
+//                 payload: id
+//             });
+//         }       
        
-    } catch (error) {
-        alert('Not authorized to delete this event!');
-        console.log(error);
-    }
-}
+//     } catch (error) {
+//         alert('Not authorized to delete this event!');
+//         console.log(error);
+//     }
+// }
 
 // join an event by a user
 

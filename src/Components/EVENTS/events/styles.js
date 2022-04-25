@@ -6,9 +6,9 @@ export default makeStyles((theme) => ({
 
     },   
     card: {
-        width: '1000%',       
+        width: '100%',       
         marginTop: 'auto',
-        background: '#e0e0e0',
+        background: '#e0e0e0',       
         [theme.breakpoints.down('xs')]: {
             
             width: '50%'
@@ -23,7 +23,7 @@ export default makeStyles((theme) => ({
         },
         [theme.breakpoints.between('md', 'lg')]: {
             
-            width: '100%'
+            width: 'auto'
         },
     },
     card2: {

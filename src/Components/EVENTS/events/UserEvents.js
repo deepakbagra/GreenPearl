@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { CircularProgress, Grid, Button, Paper } from '@material-ui/core';
+import { Grid, Button, Paper } from '@material-ui/core';
 import React, { useState } from 'react';
 
 import Event from './Event';
@@ -9,7 +9,7 @@ import useStyles from './styles';
 
 const UserEvents = () => {
   const [newEvents, setNewEvents] = useState([]);
-  const events = useSelector(state => state.viewUserEvents);
+  const events = useSelector(state => state.viewUserEvents);  
 
   let userOwnEvents = [];
   let userJoinedEvents = [];
@@ -23,17 +23,21 @@ const UserEvents = () => {
     userJoinedEvents = events.joinedEvent;
   }
 
+  // filtering audited events
+  const auditedOwnEvents = userOwnEvents?.filter((event) => event?.auditStatus === 1);
+  const auditedJoinedEvents = userJoinedEvents?.filter((event) => event?.auditStatus === 1);
+
   return (   
-    (!userOwnEvents?.length && !userJoinedEvents?.length) ? <div style={{ height: '24rem', margin: '14em' }}><CircularProgress /> </div> : (
+    (!auditedOwnEvents?.length && !auditedJoinedEvents?.length) ? <div style={{ height: '24rem', margin: '14em' }}><h1>No Event to display</h1></div> : (
       <div >
         <div style={{zIndex:'auto', marginTop: '8rem', padding: '1em', display:'flex', justifyContent:'space-between'}}>
-          <Button variant='contained' color='secondary' style={{marginRight: '2em', zIndex: '0', position:'relative'}} onClick={() => setNewEvents(userOwnEvents)}>Your created events</Button>
+          <Button variant='contained' color='secondary' style={{marginRight: '2em', zIndex: '0', position:'relative'}} onClick={() => setNewEvents(auditedOwnEvents)}>Your created events</Button>
           
           
           <Paper  comonent='form' autoComplete='off' noValidate className={classes.searchBar}>
             <SearchBar />
           </Paper>
-          <Button variant='contained' color='secondary' style={{marginRight: '2em',  zIndex: '0', position:'relative'}} onClick={() => setNewEvents(userJoinedEvents)}>Your joined events</Button>
+          <Button variant='contained' color='secondary' style={{marginRight: '2em',  zIndex: '0', position:'relative'}} onClick={() => setNewEvents(auditedJoinedEvents)}>Your joined events</Button>
         </div>
         <hr style={{ marginTop: '1em' }}></hr>
       <Grid container alignItems='stretch' spacing={5} style={{ padding: '0em', marginTop: '1em' }} >

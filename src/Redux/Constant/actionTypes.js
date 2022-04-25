@@ -27,3 +27,8 @@ export const DELETE_SERVICE = 'DELETE_SERVICE';
 export const VIEW_SERVICE = 'VIEW_SERVICE';
 export const LIST_USER_SERVICES = 'LIST_USER_SERVICES';
 export const SEARCH_USER_SERVICES = 'SEARCH_USER_SERVICES';
+
+// blog related
+export const LIST_CLASSES = 'LIST_CLASSES';
+export const LIST_CLASS_BLOGS = 'LIST_CLASS_BLOGS';
+export const CREATE_BLOG = 'CREATE_BLOG';

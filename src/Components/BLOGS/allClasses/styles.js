@@ -1,52 +1,27 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-    hotService: {
-        textAlign: 'center',
-        fontWeight: 'bold',
-        fontSize: '0.9em', 
-        marginBottom: '1em',        
-    },
-    cardAll: {
-        width: '100%',       
-        marginTop: 'auto',
-        background: '#e0e0e0',
-        [theme.breakpoints.down('xs')]: {
-            
-            width: '50%'
-        },
-        [theme.breakpoints.between('xs', 'sm')]: {
-            
-            width: '60%'
-        },
-        [theme.breakpoints.between('sm', 'md')]: {
-            
-            width: '90%'
-        },
-        [theme.breakpoints.between('md', 'lg')]: {
-            
-            width: '30em',
-            height: '20em'
-        },
-    },
+    allEventAppbar: {
+        //height: '3rem',   
+
+    },   
     card: {
         width: '100%',       
         marginTop: 'auto',
-        background: '#e0e0e0',
+        background: '#e0e0e0',       
         [theme.breakpoints.down('xs')]: {
             
-            width: '50%'
+            width: '70%'
         },
         [theme.breakpoints.between('xs', 'sm')]: {
             
-            width: '60%'
+            width: '80%'
         },
         [theme.breakpoints.between('sm', 'md')]: {
             
             width: '90%'
         },
-        [theme.breakpoints.between('md', 'lg')]: {
-            
+        [theme.breakpoints.between('md', 'lg')]: {            
             width: '100%'
         },
     },
@@ -159,7 +134,7 @@ export default makeStyles((theme) => ({
     },
     address: {
         fontSize: '0.8em',
-        color: 'grey',
+        color: '#b71c1c',
         fontWeight: '900',
         [theme.breakpoints.down('xs')]: {
            fontSize: '0.5em' 
@@ -174,7 +149,7 @@ export default makeStyles((theme) => ({
            
         },
         [theme.breakpoints.between('md', 'lg')]: {
-           fontSize: '0.8em'
+           fontSize: '1em'
             
         },
     },
@@ -207,8 +182,7 @@ export default makeStyles((theme) => ({
     contentText: {
         fontSize: '1.1em',        
         marginTop: '1.4em',
-        wordWrap: 'break-word',
-        marginLeft: '1em',
+        wordWrap:'break-word',
         [theme.breakpoints.down('xs')]: {
             fontSize: '0.7em'
         },
@@ -218,22 +192,25 @@ export default makeStyles((theme) => ({
     },
    
     btn: {
-        fontSize: '1.6rem',
+        fontSize: '0.8rem',
         padding: '0.3em',
         margin: 'auto',
         [theme.breakpoints.down('xs')]: {
-            fontSize: '0.8rem'
+            fontSize: '0.6rem'
         },
         [theme.breakpoints.between('xs', 'sm')]: {
-            fontSize: '1.2rem'
+            fontSize: '0.7rem'
         },
         [theme.breakpoints.between('sm', 'md')]: {
-            fontSize: '1.1rem'
+            fontSize: '0.8rem'
+        },
+        [theme.breakpoints.between('md', 'lg')]: {
+            fontSize: '0.5em'
         }
     },
     more: {
         fontSize: '0.9rem',
-        textTransform: 'none',       
+        textTransform: 'none',
         [theme.breakpoints.down('xs')]: {
             fontSize: '0.6rem'
         },
@@ -245,16 +222,17 @@ export default makeStyles((theme) => ({
         }
     },
     btnText: {
-        fontSize: '1rem',
+        fontSize: '0.9rem',
         textTransform: 'none',
+        fontWeight: 'bold',
         [theme.breakpoints.down('xs')]: {
-            fontSize: '0.8rem'
+            fontSize: '0.6rem'
         },
         [theme.breakpoints.between('xs', 'sm')]: {
-            fontSize: '0.9rem'
+            fontSize: '0.7rem'
         },
         [theme.breakpoints.between('sm', 'md')]: {
-            fontSize: '1rem'
+            fontSize: '0.8rem'
         }
     },
     searchBar: {

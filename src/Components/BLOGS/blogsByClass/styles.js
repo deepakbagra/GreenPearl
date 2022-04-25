@@ -278,5 +278,11 @@ export default makeStyles((theme) => ({
             height: '2.2rem',
         }
     },
+    page: {
+        marginTop: '4em',
+        '& .css-wjh20t-MuiPagination-ul': {
+            justifyContent: 'center'
+        }
+    }
     
 }))

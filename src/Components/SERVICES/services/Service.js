@@ -30,9 +30,26 @@ const Service = ({ service }) => {
     navigate('/services/show-service');
   } 
   
-    return (
+  return (
+    <div>
+      {
+        service?.isHot ?
+        <Typography
+          color='secondary'
+          className={classes.hotService}>
+          Premier Service
+        </Typography>
+        :
+        <Typography
+          color='primary'
+          className={classes.hotService}>
+          Normal Service
+        </Typography>
+      }
+
+      
       <Card className={classes.card}>
-             
+      
         <CardContent>
           <div gutterBottom className={classes.title1} >
             <Typography gutterBottom className={classes.titleText1}>
@@ -59,6 +76,7 @@ const Service = ({ service }) => {
          
         </CardActions>
       </Card>
+    </div>
   );
 };
 

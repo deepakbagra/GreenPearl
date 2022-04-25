@@ -7,7 +7,8 @@ import { useDispatch } from 'react-redux';
 
 import { listEvents } from '../../../Redux/Actions/eventActions';
 
-const SearchBar = () => {
+const SearchBar = ({ page }) => {
+  
     const [input, setInput] = useState('');
     
     const classes = useStyles();    
@@ -27,9 +28,9 @@ const SearchBar = () => {
 
     setInput('');
 
-    dispatch(listEvents());
+    dispatch(listEvents(page));
 
-  },[dispatch]);
+  },[dispatch, page]);
   
   useEffect(() => {
 

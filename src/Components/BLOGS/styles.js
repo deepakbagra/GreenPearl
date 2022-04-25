@@ -52,7 +52,7 @@ export default makeStyles((theme) => ({
     },
     card2: {
         margin: 'auto',
-        width: '20rem',
+        width: 'auto',
         background: '#f3e5f5',
         [theme.breakpoints.down('xs')]: {
             margin: 'auto',
@@ -64,11 +64,11 @@ export default makeStyles((theme) => ({
         },
         [theme.breakpoints.between('sm', 'md')]: {
             margin: 'auto',
-            width: '90%'
+            width: 'auto%'
         },
         [theme.breakpoints.between('md', 'lg')]: {
             margin: 'auto',
-            width: '40%'
+            width: 'auto%'
         },
     },
     title1: {
