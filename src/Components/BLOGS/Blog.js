@@ -1,31 +1,31 @@
 // importing external libraries
 
 import React from 'react'; 
-import { useNavigate } from 'react-router-dom';
+
 
 import {
   Card, CardActions, CardContent,
   Button, Typography,
 } from '@material-ui/core';
 import moment from 'moment';
-import { useDispatch, useSelector } from 'react-redux';
+//import { useDispatch } from 'react-redux';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import PhoneIcon from '@mui/icons-material/Phone';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+// import LocationOnIcon from '@mui/icons-material/LocationOn';
+// import PhoneIcon from '@mui/icons-material/Phone';
+// import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 
 // local imports
 
 import useStyles from './styles';
-import { deleteService } from '../../Redux/Actions/serviceActions';
+//import { deleteService } from '../../Redux/Actions/serviceActions';
 
 const Blog = ({ blog }) => { 
     
   
   const classes = useStyles();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  //const dispatch = useDispatch();
+ 
 
   
   const onSubmitDeleteService = () => {

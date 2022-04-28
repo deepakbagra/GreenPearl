@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import './event.links.css';
 
-const Events = ( {user} ) => {  
+const Events = () => { 
+  
+  const user = JSON.parse(localStorage.getItem('userInfo'));
   
   return (
     <div className="dropdown">
