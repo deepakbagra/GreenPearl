@@ -76,10 +76,10 @@ const Header = () => {
           <Button component={Link} to='/contact' color='primary' className={classes.topNavLinksButton}>Contact</Button>
           <Button component={Link} to='/aboutus' color='primary' className={classes.topNavLinksButton}>About Us</Button>
         </div>
-        <div>
+        {/* <div>
           <a href="http://81.68.206.216:10010/" target="_blank" rel="noreferrer"><Button className={classes.auth} variant='text' >Admin Dashboard</Button>
             </a>
-        </div>
+        </div> */}
         
 
         {/* Login button */}
