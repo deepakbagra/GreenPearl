@@ -10,7 +10,8 @@ const WhatIsAutism = () => {
       <Typography variant='h4' style={{marginTop: '5em'}}className={classes.title}>What Is Autism ?</Typography>
       <Typography className={classes.content}>Autism is a complex, lifelong developmental disability that typically appears during early childhood and can impact a person’s social skills, communication, relationships, and self-regulation. Autism is defined by a certain set of behaviors and is a “spectrum condition” that affects people differently and to varying degrees.</Typography>
       <Typography className={classes.title}>Symptoms (in early childhood)</Typography>
-      <Typography className={classes.content}>1. Speaks later than typical or not at all (nonverbal)<br></br>
+      <Typography className={classes.content}>
+            1. Speaks later than typical or not at all (nonverbal)<br></br>
             2. Repetition in language or movement, such as repeating the same word or sounds, hand flapping, or any repeated movement<br></br> 
             3. Atypical nonverbal communication, including avoiding eye contact, giving few facial expressions, or having a monotone<br></br>
             4. Prefers solitary or parallel play rather than engaging in associative or cooperative play with other children<br></br>

@@ -5,7 +5,7 @@ import './event.links.css';
 
 const Events = () => { 
   
-  const user = JSON.parse(localStorage.getItem('userInfo'));
+  const user = JSON.parse(localStorage.getItem('profile'));
   
   return (
     <div className="dropdown">
