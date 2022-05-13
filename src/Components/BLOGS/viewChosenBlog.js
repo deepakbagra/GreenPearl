@@ -130,12 +130,12 @@ const Blog = () => {
 
         <CardActions className={classes.actions} >
           
-          <Button className={classes.btn} disabled={!isMyOwnBlog()} color='secondary' onClick={onSubmitDeleteService}>
+          <Button className={classes.btn} disabled={!user && !isMyOwnBlog()} color='secondary' onClick={onSubmitDeleteService}>
             <DeleteIcon className={classes.btn} />
             <Typography className={classes.btnText}>delete</Typography>
           </Button>
           
-          <Button className={classes.btn} color='secondary' onClick={onSubmitLike}>
+          <Button className={classes.btn} disabled={!user} color='secondary' onClick={onSubmitLike}>
             <ThumbUpIcon className={classes.btn} />
             <div style={{marginRight: '0.3em'}}>{blog?.likeCount}</div>
             {blog?.likeCount < 2 ?
@@ -145,12 +145,12 @@ const Blog = () => {
             }            
           </Button>
 
-          <Button className={classes.btn} disabled={setAction()} color='secondary' onClick={onSubmitDislike}>
+          <Button className={classes.btn} disabled={!user} color='secondary' onClick={onSubmitDislike}>
             <ThumbDownIcon className={classes.btn} />
             <Typography className={classes.btnText}>dislike</Typography>
           </Button>
 
-          <Button className={classes.btn} color='secondary' onClick={() => {}}>
+          <Button className={classes.btn} disabled={!user} color='secondary' onClick={() => {}}>
             <CommentIcon className={classes.btn} />
             <Typography className={classes.btnText}>comment</Typography>
           </Button>
