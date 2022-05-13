@@ -11,8 +11,8 @@ const AboutAutism = () => {
       </>
         <div className="dropdown-content">
             <Button component={Link} to ="/aboutautism/whatisautism" >What is Autism ?</Button>
-            < Button component={Link} to ="/aboutautism/myths">Myths</Button>
-            <Button component={Link} to ="/aboutautism/rights">Know Your Rights</Button>
+            < Button component={Link} to ="/content/symptoms">Symptoms</Button>
+            <Button component={Link} to ="/content/symptoms">Diagnosis</Button>
         </div>
   </div>
   )

@@ -1,3 +1,8 @@
+/*
+This component will provide a UI 
+to display resource options in the navbar tab link
+*/
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -10,9 +15,9 @@ const Support = () => {
         <div className="dropbtn">Support</div>
         </>
         <div className="dropdown-content">
-            <Link id="RouterNavLink" to="/support/service-provider">Survice Providers</Link>
-            <Link id="RouterNavLink" to="/support/support workers">Support Workers</Link>
-            <Link id="RouterNavLink" to="/support/volunteers">Volunteers</Link>
+            <Link id="RouterNavLink" to="/content/education">Education Support</Link>
+            <Link id="RouterNavLink" to="/content/service-provider">Support Workers</Link>
+            
         </div>
   </div>
   )

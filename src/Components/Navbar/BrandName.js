@@ -1,3 +1,8 @@
+/*
+This component will display 
+Logo of the site owner
+*/
+
 import React from 'react';
 import useStyles from './styles';
 import brandLogo from '../../Images/LOGO.png';

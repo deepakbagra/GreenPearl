@@ -1,3 +1,8 @@
+/*
+This component will provide a UI 
+to display all the posted services
+*/
+
 import { useSelector } from 'react-redux';
 import { Grid, Typography,Paper } from '@material-ui/core';
 import React from 'react';

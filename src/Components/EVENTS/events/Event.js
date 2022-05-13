@@ -1,3 +1,8 @@
+/*
+This component will provide a UI to
+see a particular Event
+*/
+
 // importing external libraries
 
 import React from 'react';
@@ -28,6 +33,7 @@ const Event = ({ event }) => {
   const onSubmit = () => {
    
     dispatch(viewEvent(event?.id?.toString()));
+    localStorage.setItem('eventId', event?.id?.toString());
     
     navigate('/events/show-event');
   } 

@@ -1,3 +1,8 @@
+/*
+This component will provide a UI 
+to display Admin Dashboard
+*/
+
 import React, { useEffect } from 'react';
 import { Paper, Button, AppBar, TableContainer, Table, TableBody, TableHead, TableCell, TableRow, TablePagination  } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';

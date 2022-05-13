@@ -30,7 +30,7 @@ const BlogsByClass = () => {
   
     console.log('blogs: ', blogs);
     console.log('classId', classId);
-    console.log('page', page);
+    console.log('page length', pageLength);
   
     const classes = useStyles();
     
@@ -60,8 +60,8 @@ const BlogsByClass = () => {
         
           {blogs.map((blog) => (          
           <Grid item                       
-                xs={12} sm={6} md={4}  >
-              <Blog blog={blog} />
+                xs={12} sm={6} md={4} >
+              <Blog blog={blog} page={page} classId={classId} />
           </Grid>
           ))}          
         </Grid>

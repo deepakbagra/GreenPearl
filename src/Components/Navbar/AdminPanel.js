@@ -1,6 +1,8 @@
+/*
+This component will call 
+Admin dashboard component
+*/
 import React from 'react';
-
-
 
 const AdminPanel = () => {
     return (

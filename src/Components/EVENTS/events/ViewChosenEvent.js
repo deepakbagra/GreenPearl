@@ -1,6 +1,11 @@
+/*
+This component will provide a UI to
+see the detail of a selected Event
+*/
+
 // importing external libraries
 
-import React from 'react'; 
+import React, {useEffect} from 'react'; 
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -17,7 +22,7 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 // local imports
 
 import useStyles from './styles';
-import { deleteEvent, joinEvent, exitEvent } from '../../../Redux/Actions/eventActions';
+import { deleteEvent, joinEvent, exitEvent, viewEvent } from '../../../Redux/Actions/eventActions';
 
 const ViewChosenEvent = () => { 
   const navigate = useNavigate();
@@ -28,6 +33,7 @@ const ViewChosenEvent = () => {
  
   const data = JSON.parse(localStorage.getItem('userInfo'));
   const user = JSON.parse(localStorage.getItem('profile'));
+  const eventId = localStorage.getItem('eventId');
 
   // to check whether event creator is viewing his or her own event
   const isMyOwnEvent = () => {
@@ -92,6 +98,10 @@ const ViewChosenEvent = () => {
     }
     else return true;
   }
+
+  useEffect(() => {   
+    dispatch(viewEvent(eventId));
+}, [dispatch, eventId]);
  
   return (
     <div>

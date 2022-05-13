@@ -1,3 +1,8 @@
+/*
+This component will provide props to its children 
+component to see all Events
+*/
+
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Container } from '@material-ui/core';

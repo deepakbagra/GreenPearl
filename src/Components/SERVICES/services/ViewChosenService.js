@@ -1,6 +1,11 @@
+/*
+This component will provide a UI 
+to display  the deatil of a chosen posted services
+*/
+
 // importing external libraries
 
-import React from 'react'; 
+import React, { useEffect } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -18,7 +23,7 @@ import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 // local imports
 
 import useStyles from './styles';
-import { deleteService } from '../../../Redux/Actions/serviceActions';
+import { deleteService, viewService } from '../../../Redux/Actions/serviceActions';
 
 const ViewChosenEvent = () => { 
 
@@ -27,6 +32,7 @@ const ViewChosenEvent = () => {
   console.log('service', service)
  
   const data = JSON.parse(localStorage.getItem('userInfo'));
+  const serviceId = localStorage.getItem('serviceId');
 
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -45,6 +51,10 @@ const ViewChosenEvent = () => {
     dispatch(deleteService(service?.id?.toString()));    
     navigate(-1);
   }
+
+  useEffect(() => {   
+    dispatch(viewService (serviceId));
+}, [dispatch, serviceId]);
   
   return (
     <div>

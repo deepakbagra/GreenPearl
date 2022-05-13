@@ -1,3 +1,8 @@
+/*
+  This component displays a Blog's
+  content selected from a class 
+*/
+
 // importing external libraries
 
 import React from 'react'; 
@@ -8,29 +13,29 @@ import {
   Button, Typography,
 } from '@material-ui/core';
 import moment from 'moment';
-//import { useDispatch } from 'react-redux';
-import DeleteIcon from '@material-ui/icons/Delete';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-// import LocationOnIcon from '@mui/icons-material/LocationOn';
-// import PhoneIcon from '@mui/icons-material/Phone';
-// import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 
 // local imports
 
 import useStyles from './styles';
-//import { deleteService } from '../../Redux/Actions/serviceActions';
+import { viewBlog } from '../../Redux/Actions/blogActions';
 
-const Blog = ({ blog }) => { 
-    
+const Blog = ({ blog }) => {  
   
   const classes = useStyles();
-  //const dispatch = useDispatch();
- 
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   
-  const onSubmitDeleteService = () => {
-    
-  }
+  const onSubmit = () => {
+   
+    dispatch(viewBlog(blog?.id?.toString()));
+    localStorage.setItem('blogId', blog?.id?.toString());
+
+    navigate('/blogs/show-blog');
+  }   
+  
   
   return (
     <div>
@@ -44,26 +49,19 @@ const Blog = ({ blog }) => {
               {blog?.title}
             </Typography>
             <hr></hr>
-          </div>
+          </div>          
           
-          
-          
-          <Typography gutterBottom multipleLine className={classes.contentText}>
-              {blog?.content}
-          </Typography>         
-
           <Typography style={{ fontSize: '0.9rem', color: 'grey', textAlign: 'right' }}>            
             ... posted {moment.utc(blog?.createTime).local().fromNow()}
           </Typography>
             
         </CardContent>
 
-        <CardActions className={classes.actions} >
+        <CardActions className={classes.actions} >          
           
-          <Button className={classes.btn} color='secondary' onClick={onSubmitDeleteService}>
-            <DeleteIcon className={classes.btn} />
-            <Typography className={classes.btnText}>delete</Typography>
-          </Button>          
+        <Button className={classes.btn} variant='contained' color='primary' onClick = {() => onSubmit()}>            
+            <Typography className={classes.more}>Click here to view all details ...</Typography>
+        </Button>
           
         </CardActions>
       </Card>

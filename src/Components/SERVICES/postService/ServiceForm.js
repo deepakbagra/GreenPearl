@@ -1,3 +1,8 @@
+/*
+This component will provide a UI 
+to display Service form to a user
+*/
+
 import React, { useState } from 'react';
 import { Grid, Container, TextField, Typography, Button } from '@material-ui/core';
 

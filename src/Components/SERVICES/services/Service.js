@@ -1,3 +1,8 @@
+/*
+This component will provide a UI 
+to display a selected services
+*/
+
 // importing external libraries
 
 import React from 'react';
@@ -26,6 +31,7 @@ const Service = ({ service }) => {
   const onSubmit = () => {
    
     dispatch(viewService(service?.id?.toString()));
+    localStorage.setItem('serviceId', service?.id?.toString());
 
     navigate('/services/show-service');
   } 

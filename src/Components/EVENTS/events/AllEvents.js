@@ -1,8 +1,11 @@
+/*
+This component will provide a UI to see all Events
+in Pagination way
+*/
+
 import { useSelector } from 'react-redux';
 import { Grid, Typography,Paper } from '@material-ui/core';
 import React from 'react';
-
-
 import useStyles from './styles';
 import Event from './Event';
 import SearchBar from '../search/SearchBarAllEvents';

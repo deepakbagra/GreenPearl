@@ -1,3 +1,8 @@
+/*
+This component will provide a UI 
+to display Login menu options in the navbar tab link
+*/
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LockOpenIcon from '@material-ui/icons/LockOpen';

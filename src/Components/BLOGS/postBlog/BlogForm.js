@@ -14,7 +14,7 @@ const initialState = {
 }
 
 const PostForm = () => {
-    const [eventData, setEventData] = useState(initialState);
+    const [blogData, setBlogData] = useState(initialState);
 
     const classId = localStorage.getItem('classId');
    
@@ -23,12 +23,12 @@ const PostForm = () => {
    
     
     const clear = () => {
-        setEventData(initialState);
+        setBlogData(initialState);
     }
 
     const handleChange = (e) => {
-        setEventData({
-            ...eventData,               
+        setBlogData({
+            ...blogData,               
             [e.target.name]: e.target.value
         });            
     }    
@@ -36,7 +36,7 @@ const PostForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        dispatch(createBlog({ ...eventData, classId: classId }));
+        dispatch(createBlog({ ...blogData, classId: classId }));
         clear();        
     }
    
@@ -54,19 +54,19 @@ const PostForm = () => {
                                 name='title'                            
                                 variant='outlined'
                                 fullWidth
-                                value={eventData.title}
+                                value={blogData.title}
                                 onChange={handleChange}
                             />
                         </Grid>                        
                         
                     <Grid item xs={12}>
-                        <Typography className={classes.headers}>Service description ...</Typography>
+                        <Typography className={classes.headers}>Content</Typography>
                         <TextField className={classes.form} size='small'
                             name='content'                            
                             variant='outlined'
                             fullWidth
                             multiline
-                            value={eventData.content}
+                            value={blogData.content}
                             onChange={handleChange}
                             />
                     </Grid>

@@ -3,36 +3,7 @@ import * as api from '../../API';
 
 // ************* Action creators *******************************//
 
-// show all services 
 
-export const listServices = (pageNumber) => async (dispatch) => {  
-    try {
-        const { data } = await api.listServices(pageNumber);      
-       console.log('list services', data)
-        dispatch({
-            type: Actions.LIST_ALL_SERVICES,
-            payload: data.data
-        });
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-// show a particular service
-
-export const viewService = (id) => async (dispatch) => {  
-    try {
-        const { data } = await api.viewService(id);
-        console.log('view this service:', data);
-       
-        dispatch({
-            type: Actions.VIEW_SERVICE,
-            payload: data.data
-        });
-    } catch (error) {
-        console.log(error);
-    }
-}
 // show all blog classes 
 
 export const listClasses = () => async (dispatch) => {  
@@ -54,11 +25,28 @@ export const listClasses = () => async (dispatch) => {
 export const viewBlogsByClass = (id, page) => async (dispatch) => {  
     try {
         const { data } = await api.viewBlogsByClass(id, page);
-        console.log('list blogs of a class action: ', data); 
-        console.log('page number class action: ', page); 
+        console.log('list blogs of a class action: ', data);
+        console.log('list page of blogs of a class action: ', page); 
       
         dispatch({
             type: Actions.LIST_CLASS_BLOGS,
+            payload: data.data
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+// show a particular event
+
+export const viewBlog = (id) => async (dispatch) => {  
+    try {
+        const { data } = await api.viewBlog(id);
+        console.log('view this blog:', data);
+       
+        dispatch({
+            type: Actions.VIEW_BLOG,
             payload: data.data
         });
     } catch (error) {
@@ -81,56 +69,77 @@ export const createBlog = (post) => async (dispatch) => {
         console.log(error);
     }
 }
-// delete a service by a service creator
+// delete a blog by a blog creator
 
-// export const deleteService = (id) => async (dispatch) => {    
-//     try {        
-//         const response = await api.deleteService(id);
+export const deleteBlog = (id) => async (dispatch) => {    
+    try {        
+        const response = await api.deleteBlog(id);
 
-//         console.log('delete service action', response);
+        console.log('delete blog action', response);
         
-//         if (response?.data?.code === 401) {
-//             alert('Not authorized to delete this event.')
-//         }
+        if (response?.data?.code === 401) {
+            alert('Not authorized to delete this Blog.')
+        }
 
-//         if (response?.data?.code === 200) {
-//             dispatch({
-//                 type: Actions.DELETE_EVENT,
-//                 payload: id
-//             });
-//         }       
+        if (response?.data?.code === 200) {
+            dispatch({
+                type: Actions.DELETE_BLOG,
+                payload: id
+            });
+        }       
        
-//     } catch (error) {
-//         alert('Not authorized to delete this event!');
-//         console.log(error);
-//     }
-// }
+    } catch (error) {
+        alert('Not authorized to delete this Blog!');
+        console.log(error);
+    }
+}
 
-// join an event by a user
+// like a blog
 
+export const likeBlog = (id) => async (dispatch) => {    
+    try {        
+        const response = await api.likeBlog(id);
 
-    // exit the subsribed event
+        console.log('like blog action', response);        
+        
+        if (response?.data?.code === 200) {
+            alert("You have successfully liked this blog!")
+            dispatch({
+                type: Actions.LIKE_BLOG,
+                payload: id
+            });
+        }       
+       
+    } catch (error) {
+        alert('You have already liked this Blog!');
+        console.log(error);
+    }
+}
 
-    // export const exitEvent = (id) => async (dispatch) => {    
-    //     try {        
-    //         const response = await api.exitEvent(id);
-    //         console.log('exit response', response);
-           
-          
-    //         if (response?.data?.code === 200) {
-    //             dispatch({
-    //                 type: Actions.EXIT_EVENT,
-    //                 payload: true
-    //             })
-    //             alert('You have successfully unsubscribed to this event.')
-    //         }
-    
-           
-    //     } catch (error) {
-    //         alert('Exit event: Something wrong happened, please try again!');
-    //         console.log(error);
-    //     }
-    // }
+// Dislike a blog
+
+export const dislikeBlog = (id) => async (dispatch) => {    
+    try {        
+        const response = await api.dislikeBlog(id);
+
+        console.log('Dislike blog action', response);        
+        
+        if (response?.data?.code === 200) {
+            alert("You have successfully disliked this blog!");
+            dispatch({
+                type: Actions.DISLIKE_BLOG,
+                payload: id
+            });
+        }
+        else
+            alert("You haven't liked this blog before!");
+       
+    } catch (error) {
+        alert("You haven't liked this blog before!");
+        console.log(error);
+    }
+}
+
 
 
 

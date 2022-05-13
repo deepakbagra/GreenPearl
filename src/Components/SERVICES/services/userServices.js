@@ -1,3 +1,8 @@
+/*
+This component will provide a UI 
+to display a user's own services
+*/
+
 import { useSelector } from 'react-redux';
 import { CircularProgress, Grid, Paper, Typography } from '@material-ui/core';
 import React from 'react';

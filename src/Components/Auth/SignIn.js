@@ -1,9 +1,13 @@
+/*
+This is a Sign In component 
+This will provide a UI for a user to enter their login detail
+and submit through Submit button
+*/
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Avatar, Paper, Grid, Typography, TextField, IconButton, InputAdornment, Container, Button } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-// import { GoogleLogin } from 'react-google-login';
-// import GoogleIcon from './GoogleIcon';
 import useStyles from './styles';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';

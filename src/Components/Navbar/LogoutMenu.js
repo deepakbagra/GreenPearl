@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+/*
+This component will provide a UI 
+to display Logout menu options in the navbar tab link
+*/
 
+import React, { useState, useEffect } from 'react';
 import { Avatar, Modal } from '@material-ui/core';
 import { useSelector } from 'react-redux';
-
 import EditAvatar from './EditAvatar';
 import EditPassword from './editPassword';
-
 import './logoutmenu.css';
-
 import useStyles from './styles';
 
 const LogoutMenu = (props) => {

@@ -50,8 +50,11 @@ export const listUserServices = () => api.get('/service/user');
 // blog related
 export const createBlog = (newPost) => api.post('/blog', newPost);
 export const listClasses = () => api.get('/blog/class');
-export const viewBlogsByClass = (id, pageNumber) => api.get(`/blog/class/${id}/page?pageNumber=${pageNumber}&pageSize=3`);
-
+export const viewBlogsByClass = (id, pageNumber) => api.get(`/blog/class/${id}/page?pageNumber=${pageNumber}&pageSize=2`);
+export const viewBlog = (id) => api.get(`/blog/${id}`);
+export const deleteBlog = (id) => api.delete(`/blog/${id}`);
+export const likeBlog = (id) => api.post(`/blog/${id}/like`);
+export const dislikeBlog = (id) => api.delete(`/blog/${id}/like`);
 
 // auth related
 

@@ -1,13 +1,15 @@
+/*
+This component will allow a singed user
+to change their profile picture
+*/
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Paper, Avatar, Typography, IconButton } from '@material-ui/core';
 import CancelIcon from '@mui/icons-material/Cancel';
 import useStyles from './styles';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { useForm } from "react-hook-form";
 import { CircularProgress } from '@mui/material';
-
-
 import { changeAvatar } from '../../../Redux/Actions/authActions';
 
 

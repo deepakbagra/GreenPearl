@@ -1,3 +1,8 @@
+/*
+This component will allow a singed user
+to change their password
+*/
+
 import React, { useState, useEffect } from 'react';
 import { Avatar, Paper, Grid, Typography, TextField, IconButton, InputAdornment, Button } from '@material-ui/core';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -7,8 +12,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-
-
 import { changePassword } from '../../../Redux/Actions/authActions';
 import { PWD_CHANGE } from '../../../Redux/Constant/actionTypes';
 

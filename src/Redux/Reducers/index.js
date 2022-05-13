@@ -18,6 +18,7 @@ import viewUserServices from './services/userServicesReducer';
 
 import classes from './blogs/classReducers';
 import blogs from './blogs/blogReducer';
+import viewBlog from './blogs/viewBlogReducer';
 
 
 export default combineReducers(
@@ -37,5 +38,6 @@ export default combineReducers(
         viewUserServices,
         classes,
         blogs,
+        viewBlog
     }
 );

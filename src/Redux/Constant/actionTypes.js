@@ -32,3 +32,7 @@ export const SEARCH_USER_SERVICES = 'SEARCH_USER_SERVICES';
 export const LIST_CLASSES = 'LIST_CLASSES';
 export const LIST_CLASS_BLOGS = 'LIST_CLASS_BLOGS';
 export const CREATE_BLOG = 'CREATE_BLOG';
+export const DELETE_BLOG = 'DELETE_BLOG';
+export const LIKE_BLOG = 'LIKE_BLOG';
+export const DISLIKE_BLOG = 'DISLIKE_BLOG';
+export const VIEW_BLOG = 'VIEW_BLOG';

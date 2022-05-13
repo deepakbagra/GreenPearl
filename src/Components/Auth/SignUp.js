@@ -1,3 +1,9 @@
+/*
+This is a Sign Up component 
+This will provide a UI for a user to register their login detail
+and submit through Submit button
+*/
+
 import React, { useState } from 'react';
 import { Avatar, Paper, Container, Button, Grid, TextField, Typography, InputAdornment, IconButton } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';

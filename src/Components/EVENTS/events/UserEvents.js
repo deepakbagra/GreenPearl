@@ -1,7 +1,12 @@
+/*
+This component will provide a UI to
+let a user see their own Events 
+and to let them delete or exit the event
+*/
+
 import { useSelector } from 'react-redux';
 import { Grid, Button, Paper } from '@material-ui/core';
 import React, { useState } from 'react';
-
 import Event from './Event';
 import SearchBar from '../search/SearchBarUserEvents';
 import useStyles from './styles';

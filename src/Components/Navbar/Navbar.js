@@ -1,3 +1,8 @@
+/*
+This component will provide a UI 
+to display the navbar 
+*/
+
 // importing in-built libraries
 
 import { AppBar, IconButton, Paper, Button } from '@material-ui/core';
