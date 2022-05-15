@@ -14,8 +14,8 @@ import { viewBlogsByClass } from '../../../Redux/Actions/blogActions';
 
 const BlogsByClass = () => {
     
-    const blogs = useSelector(state => state.blogs);  
-    const [page, setPage] = useState(1);
+  const blogs = useSelector(state => state.blogs);  
+  const [page, setPage] = useState(1);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

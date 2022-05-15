@@ -41,7 +41,7 @@ export const deleteEvent = (id) => api.delete(`/event/${id}`);
 
 // service related
 export const createService = (newPost) => api.post('/service', newPost);
-export const listServices = (pageNumber) => api.get(`/service/page?auditStatus=1&pageNumber=${pageNumber}&pageSize=3`);
+export const listServices = (pageNumber) => api.get(`/service?auditStatus=1&pageNumber=${pageNumber}&pageSize=3`);
 export const viewService = (id) => api.get(`/service/${id}`);
 export const deleteService = (id) => api.delete(`/service/${id}`);
 export const listUserServices = () => api.get('/service/user');
@@ -55,6 +55,9 @@ export const viewBlog = (id) => api.get(`/blog/${id}`);
 export const deleteBlog = (id) => api.delete(`/blog/${id}`);
 export const likeBlog = (id) => api.post(`/blog/${id}/like`);
 export const dislikeBlog = (id) => api.delete(`/blog/${id}/like`);
+export const postParentComment = (comment) => api.post(`/blog/comment/parent`, comment);
+export const postParentReComment = (comment) => api.post(`/blog/comment/child`, comment);
+
 
 // auth related
 

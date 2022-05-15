@@ -7,53 +7,53 @@ export default makeStyles((theme) => ({
         fontSize: '0.9em', 
         marginBottom: '1em',        
     },
-    cardAll: {
+        
+    cardParent: {
         width: '100%',       
-        marginTop: 'auto',
-        background: '#e0e0e0',
+        margin: 'auto',
+        background: '#e0e0e0',        
         [theme.breakpoints.down('xs')]: {
             
-            width: '50%'
+            width: '85%'
         },
         [theme.breakpoints.between('xs', 'sm')]: {
-            
-            width: '60%'
-        },
-        [theme.breakpoints.between('sm', 'md')]: {
             
             width: '90%'
         },
+        [theme.breakpoints.between('sm', 'md')]: {
+            
+            width: '95%'
+        },
         [theme.breakpoints.between('md', 'lg')]: {
             
-            width: '30em',
-            height: '20em'
+            width: '100%'
         },
     },
-    card: {
-        width: '60%',
-        margin: 'auto',
-        marginTop: '4em',
-        background: '#e0e0e0',
+    cardChild: {
+        width: '100%',       
+        marginTop: 'auto',
+        background: '#e0e0e0',        
         [theme.breakpoints.down('xs')]: {
-            margin: 'auto',
-            width: '50%'
+            
+            width: '80%'
         },
         [theme.breakpoints.between('xs', 'sm')]: {
-            margin: 'auto',
-            width: '50%'
+            
+            width: '85%'
         },
         [theme.breakpoints.between('sm', 'md')]: {
-            margin: 'auto',
-            width: '50%'
+            
+            width: '95%'
         },
         [theme.breakpoints.between('md', 'lg')]: {
-            margin: 'auto',
-            width: '60%'
+            
+            width: '20em',
+            height: '14em'
         },
     },
     card2: {
         margin: 'auto',
-        width: 'auto',
+        width: '20rem',
         background: '#f3e5f5',
         [theme.breakpoints.down('xs')]: {
             margin: 'auto',
@@ -65,32 +65,32 @@ export default makeStyles((theme) => ({
         },
         [theme.breakpoints.between('sm', 'md')]: {
             margin: 'auto',
-            width: 'auto%'
+            width: '90%'
         },
         [theme.breakpoints.between('md', 'lg')]: {
             margin: 'auto',
-            width: '100%'
+            width: '40%'
         },
     },
     title1: {
         textAlign: 'center',       
     },
     titleText1: {
-        fontSize: '1.5em',
+        fontSize: '1em',
         [theme.breakpoints.down('xs')]: {
-           fontSize: '0.9em' 
+           fontSize: '0.8em' 
             
         },
         [theme.breakpoints.between('xs', 'sm')]: {
-           fontSize: '1em' 
+           fontSize: '0.9em' 
             
         },
         [theme.breakpoints.between('sm', 'md')]: {
-           fontSize: '1.3em'
+           fontSize: '1em'
            
         },
         [theme.breakpoints.between('md', 'lg')]: {
-           fontSize: '1.5em'
+           fontSize: '1em'
             
         },
     },
@@ -98,21 +98,21 @@ export default makeStyles((theme) => ({
         textAlign: 'center',       
     },
     titleText2: {
-        fontSize: '2em',
+        fontSize: '0.9em',
         [theme.breakpoints.down('xs')]: {
-           fontSize: '1em' 
+           fontSize: '0.75em' 
             
         },
         [theme.breakpoints.between('xs', 'sm')]: {
-           fontSize: '1.3em' 
+           fontSize: '0.75em' 
             
         },
         [theme.breakpoints.between('sm', 'md')]: {
-           fontSize: '1.4em'
+           fontSize: '0.8em'
            
         },
         [theme.breakpoints.between('md', 'lg')]: {
-           fontSize: '1.3em'
+           fontSize: '0.85em'
             
         },
     },
@@ -154,7 +154,7 @@ export default makeStyles((theme) => ({
            
         },
         [theme.breakpoints.between('md', 'lg')]: {
-           fontSize: '0.6em'
+           fontSize: '0.8em'
             
         },
     },
@@ -181,6 +181,9 @@ export default makeStyles((theme) => ({
     },
     actions: {
         height:'3rem'
+    },
+    actions2: {
+        height:'1rem'
     },
     img: {
         paddingTop: '57%',
@@ -215,19 +218,14 @@ export default makeStyles((theme) => ({
         },
         [theme.breakpoints.between('xs', 'sm')]: {
             fontSize: '0.8em'
-        },
-        [theme.breakpoints.between('sm', 'md')]: {
-            fontSize: '0.8em'
-        },
-        [theme.breakpoints.up('md')]: {
-            fontSize: '1em'
-        },
+        }
     },
    
     btn: {
-        fontSize: '1.6rem',
+        fontSize: '1.6rem',        
         padding: '0.3em',
         margin: 'auto',
+        color: 'blue',
         [theme.breakpoints.down('xs')]: {
             fontSize: '0.8rem'
         },
@@ -236,6 +234,21 @@ export default makeStyles((theme) => ({
         },
         [theme.breakpoints.between('sm', 'md')]: {
             fontSize: '1.1rem'
+        }
+    },
+    btnChild: {
+        fontSize: '1.6rem',
+        padding: '0',
+        margin: 'auto',
+        color: 'blue',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '0.8em'
+        },
+        [theme.breakpoints.between('xs', 'sm')]: {
+            fontSize: '1em'
+        },
+        [theme.breakpoints.between('sm', 'md')]: {
+            fontSize: '1em'
         }
     },
     more: {
@@ -251,17 +264,30 @@ export default makeStyles((theme) => ({
             fontSize: '0.8rem'
         }
     },
+    moreChild: {
+        fontSize: '0.7rem',
+        textTransform: 'none',       
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '0.5rem'
+        },
+        [theme.breakpoints.between('xs', 'sm')]: {
+            fontSize: '0.6rem'
+        },
+        [theme.breakpoints.between('sm', 'md')]: {
+            fontSize: '0.6rem'
+        }
+    },
     btnText: {
         fontSize: '1rem',
         textTransform: 'none',
         [theme.breakpoints.down('xs')]: {
-            fontSize: '0.6rem'
+            fontSize: '0.8rem'
         },
         [theme.breakpoints.between('xs', 'sm')]: {
-            fontSize: '0.7rem'
+            fontSize: '0.9rem'
         },
         [theme.breakpoints.between('sm', 'md')]: {
-            fontSize: '0.9rem'
+            fontSize: '1rem'
         }
     },
     searchBar: {
@@ -285,5 +311,26 @@ export default makeStyles((theme) => ({
             height: '2.2rem',
         }
     },
+    main: {
+        display: 'flex',
+        justifyContent: 'space-between',    
+        width: '70%',       
+        margin: 'auto',
+        //overflowY: 'scroll',
+    },
+    paper: {
+        position: 'absolute',
+        background: 'white',        
+        top: '58%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        height: '25em',
+        width: '70%',        
+    },
+    close: {
+        color: 'red',
+        marginTop: '10%',
+        marginLeft: '95%',        
+    }
     
 }))

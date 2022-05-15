@@ -5,7 +5,7 @@
 
 // importing external libraries
 
-import React, { useEffect, useCallback } from 'react'; 
+import React, { useEffect, useCallback , useState} from 'react'; 
 
 
 import {
@@ -20,16 +20,30 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import CommentIcon from '@mui/icons-material/Comment';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-  
+import Modal from '@material-ui/core/Modal';
+ 
 
 
 // local imports
-
 import useStyles from './styles';
+import PostParentComment from './postComment/PostParentComment';
+import ViewComments from './viewComment/ViewComments';
 import { deleteBlog, likeBlog, dislikeBlog, viewBlog } from '../../Redux/Actions/blogActions';
 
 const Blog = () => {
+  
+  const [modalOpenParentComment, setModalOpenParentComment] = useState(false);
+  const [modalOpenViewComment, setModalOpenViewComment] = useState(false);
   const blog = useSelector(state => state.viewBlog);
+  
+
+  //Modal toggle settings for parent comment tag
+  const handleModalOpenParentComment = () => { setModalOpenParentComment(true) };
+  const handleModalCloseParentComment = () => { setModalOpenParentComment(false) }; 
+
+  //Modal toggle settings for view comment tag
+  const handleModalOpenViewComment = () => { setModalOpenViewComment(true) };
+  const handleModalCloseViewComment = () => { setModalOpenViewComment(false) }; 
   
   console.log('blog =', blog);
   
@@ -37,6 +51,7 @@ const Blog = () => {
   const user = JSON.parse(localStorage.getItem('userInfo'));
   
   const blogId = localStorage.getItem('blogId');
+  
   console.log('blogId=', blogId);
     
   const classes = useStyles();
@@ -44,20 +59,20 @@ const Blog = () => {
   const navigate = useNavigate();
 
   // to check whether the user has already liked the blog before
-  const isAlreadyLiked = useCallback(() => {
-    if (!blog?.likes?.length) {
-      return false;
-    }
-    else {
-      for (let i = 0; i < blog?.likes?.length; ++i) {
-        if (blog?.likes[i].toString().localeCompare(user?.data?.user?.id?.toString()) === 0) {
+  // const isAlreadyLiked = useCallback(() => {
+  //   if (!blog?.likes?.length) {
+  //     return false;
+  //   }
+  //   else {
+  //     for (let i = 0; i < blog?.likes?.length; ++i) {
+  //       if (blog?.likes[i].toString().localeCompare(user?.data?.user?.id?.toString()) === 0) {
           
-          return true;
-        }
-      }
-      return false;
-    }
-  }, [blog?.likes, user?.data?.user?.id ]);
+  //         return true;
+  //       }
+  //     }
+  //     return false;
+  //   }
+  // }, [blog?.likes, user?.data?.user?.id ]);
   
   // delete click event listener
   const onSubmitDeleteService = () => {
@@ -71,12 +86,9 @@ const Blog = () => {
     },[dispatch, blog?.id ]);
 
   // dislike click event listener
-  const onSubmitDislike = () => {
-
-    dispatch(dislikeBlog(blog?.id?.toString()));
-    
-  }; 
-
+  const onSubmitDislike = useCallback(() => {
+    dispatch(dislikeBlog(blog?.id?.toString()));    
+  }, [dispatch, blog?.id]);
 
   // to check whether blog creator is viewing his or her own blog
   const isMyOwnBlog = () => {
@@ -87,25 +99,18 @@ const Blog = () => {
     else
     return false;
   }
-  // set actions for dislike button
-  const setAction = () => {
-    if (isAlreadyLiked)
-      return false;
-    else
-      return true;
-  }
+  
   
     useEffect(() => {
       console.log("use effect in show blog");
-      dispatch(viewBlog(blogId));
+      dispatch(viewBlog(blogId));     
       
-      
-    }, [dispatch, blogId, onSubmitLike]);
+    }, [dispatch, blogId, onSubmitLike, onSubmitDislike]);
   
   return (
     <div> 
       <Button color='primary' style={{ marginTop: '8em', fontWeight: 'bold'}} onClick={() => navigate(-1)}>
-        <KeyboardBackspaceIcon /> Back to event list
+        <KeyboardBackspaceIcon /> Back to Blog list
       </Button>
       <Card className={classes.card} style={{marginTop: '3rem'}} >
              
@@ -150,11 +155,32 @@ const Blog = () => {
             <Typography className={classes.btnText}>dislike</Typography>
           </Button>
 
-          <Button className={classes.btn} disabled={!user} color='secondary' onClick={() => {}}>
-            <CommentIcon className={classes.btn} />
-            <Typography className={classes.btnText}>comment</Typography>
-          </Button>
-          
+          {/* post comment action */}
+          <div>          
+              <Button className={classes.btn} color='secondary' onClick={handleModalOpenParentComment}>
+              <CommentIcon className={classes.btn}/>
+              <Typography className={classes.btnText}>post comment</Typography>
+              </Button>
+            
+            <Modal className={classes.modal} open={modalOpenParentComment} onClose={handleModalCloseParentComment}>
+              <>             
+                <PostParentComment closeEdit={handleModalCloseParentComment} blogId={blogId} />
+              </>
+            </Modal>
+          </div>
+          {/* view comment action */}
+          <div>          
+              <Button className={classes.btn} color='secondary' onClick={handleModalOpenViewComment}>
+              <CommentIcon className={classes.btn}/>
+              <Typography className={classes.btnText}>view comments</Typography>
+              </Button>
+            
+            <Modal className={classes.modal} open={modalOpenViewComment} onClose={handleModalCloseViewComment}>
+              <>             
+                <ViewComments close={handleModalCloseViewComment} blog={blog} />
+              </>
+            </Modal>
+          </div>
         </CardActions>
       </Card>
     </div>

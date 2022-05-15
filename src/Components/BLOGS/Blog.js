@@ -5,7 +5,7 @@
 
 // importing external libraries
 
-import React from 'react'; 
+import React, {useEffect} from 'react'; 
 
 
 import {
@@ -32,9 +32,14 @@ const Blog = ({ blog }) => {
    
     dispatch(viewBlog(blog?.id?.toString()));
     localStorage.setItem('blogId', blog?.id?.toString());
+    
 
     navigate('/blogs/show-blog');
-  }   
+  } 
+  useEffect(() => {   
+    dispatch(viewBlog(blog?.id?.toString()));    
+    
+  }, [dispatch, blog?.id]);
   
   
   return (

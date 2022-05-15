@@ -43,7 +43,7 @@ export const viewBlogsByClass = (id, page) => async (dispatch) => {
 export const viewBlog = (id) => async (dispatch) => {  
     try {
         const { data } = await api.viewBlog(id);
-        console.log('view this blog:', data);
+        console.log('view blog action:', data);
        
         dispatch({
             type: Actions.VIEW_BLOG,
@@ -136,6 +136,38 @@ export const dislikeBlog = (id) => async (dispatch) => {
        
     } catch (error) {
         alert("You haven't liked this blog before!");
+        console.log(error);
+    }
+}
+
+// create a new parent comment by a user
+
+export const postParentComment = (post) => async (dispatch) => {
+    try {
+        const { data } = await api.postParentComment(post);
+        if (data?.code === 200) {
+            alert('Your comment has been posted successfully.');
+        }
+        dispatch({
+            type: Actions.CREATE_PARENT_COMMENT,            
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// create a new child comment by a user
+
+export const postParentReComment = (post) => async (dispatch) => {
+    try {
+        const { data } = await api.postParentReComment(post);
+        if (data?.code === 200) {
+            alert('Your comment has been posted successfully.');
+        }
+        dispatch({
+            type: Actions.CREATE_CHILD_COMMENT,            
+        })
+    } catch (error) {
         console.log(error);
     }
 }
