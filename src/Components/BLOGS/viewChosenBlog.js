@@ -48,16 +48,17 @@ const Blog = () => {
   console.log('blog =', blog);
   
 
-  const user = JSON.parse(localStorage.getItem('userInfo'));
+  const user = JSON.parse(localStorage.getItem('profile'));
   
   const blogId = localStorage.getItem('blogId');
   
-  console.log('blogId=', blogId);
+  console.log('user=', user);
     
   const classes = useStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  
   // to check whether the user has already liked the blog before
   // const isAlreadyLiked = useCallback(() => {
   //   if (!blog?.likes?.length) {
@@ -157,7 +158,7 @@ const Blog = () => {
 
           {/* post comment action */}
           <div>          
-              <Button className={classes.btn} color='secondary' onClick={handleModalOpenParentComment}>
+              <Button className={classes.btn} disabled={!user} color='secondary' onClick={handleModalOpenParentComment}>
               <CommentIcon className={classes.btn}/>
               <Typography className={classes.btnText}>post comment</Typography>
               </Button>
@@ -170,7 +171,7 @@ const Blog = () => {
           </div>
           {/* view comment action */}
           <div>          
-              <Button className={classes.btn} color='secondary' onClick={handleModalOpenViewComment}>
+              <Button className={classes.btn} disabled={!user} color='secondary' onClick={handleModalOpenViewComment}>
               <CommentIcon className={classes.btn}/>
               <Typography className={classes.btnText}>view comments</Typography>
               </Button>

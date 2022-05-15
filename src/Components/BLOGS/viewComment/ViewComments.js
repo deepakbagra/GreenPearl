@@ -7,6 +7,7 @@ import useStyles from './styles';
 const ViewComments = ({ close, blog }) => {
   const comments = blog?.comments;
   console.log("comments", comments);
+  
 
   const classes = useStyles();
 
