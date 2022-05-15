@@ -330,7 +330,20 @@ export default makeStyles((theme) => ({
     close: {
         color: 'red',
         marginTop: '10%',
-        marginLeft: '95%',        
+        marginLeft: '85%',
+         
+        [theme.breakpoints.down('xs')]: {
+            marginTop: '28%',
+        },
+        [theme.breakpoints.between('xs', 'sm')]: {
+            marginTop: '22%',
+        },
+        [theme.breakpoints.between('sm', 'md')]: {
+            marginTop: '18%',
+        },
+        [theme.breakpoints.between('md', 'lg')]: {
+            marginTop: '10%',
+        }
     }
     
 }))

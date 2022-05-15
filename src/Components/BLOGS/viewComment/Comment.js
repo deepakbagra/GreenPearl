@@ -43,7 +43,7 @@ const Comment = ({ comment, close }) => {
                 <Card className={classes.cardParent}>
                     <CardContent>
                         <div>
-                            <Typography variant="body2">Initial Comment</Typography>
+                            <Typography variant="body2" style={{fontWeight: 'bold'}}>Initial Comment</Typography>
                             <hr></hr>
                             <Typography gutterBottom className={classes.titleText1}>
                                 {comment?.parentComment?.content}
@@ -78,7 +78,7 @@ const Comment = ({ comment, close }) => {
             {/* Child comments */}
             {comment?.childComments?.length ? (
             < Paper className={classes.cardChild} style={{maxWidth: '24em', overflowY: 'scroll'}}>
-                 <Typography style={{margin: '1em'}} variant="body2">Response to the Initial Comment</Typography>
+                 <Typography style={{margin: '1em', fontWeight: 'bold'}} variant="body2">Response to the Initial Comment</Typography>
                             <hr style={{margin: '1em'}}></hr>
                 {comment?.childComments?.map(commentChild => (
                     <div>
