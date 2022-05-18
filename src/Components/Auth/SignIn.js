@@ -96,6 +96,7 @@ const SignIn = () => {
                     <Button                        
                         type='submit'
                         size='small'
+                        name='submit'
                         fullWidth variant='contained'
                         color='primary'
                         className={classes.auth}

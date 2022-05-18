@@ -50,7 +50,7 @@ export const listUserServices = () => api.get('/service/user');
 // blog related
 export const createBlog = (newPost) => api.post('/blog', newPost);
 export const listClasses = () => api.get('/blog/class');
-export const viewBlogsByClass = (id, pageNumber) => api.get(`/blog/class/${id}/page?pageNumber=${pageNumber}&pageSize=2`);
+export const viewBlogsByClass = (id, pageNumber) => api.get(`/blog/class/${id}/page?pageNumber=${pageNumber}&pageSize=3`);
 export const viewBlog = (id) => api.get(`/blog/${id}`);
 export const deleteBlog = (id) => api.delete(`/blog/${id}`);
 export const likeBlog = (id) => api.post(`/blog/${id}/like`);
@@ -66,6 +66,7 @@ export const logout = () => api.get('/account/logout');
 export const signUp = (formSignUp, roleId) => api.post(`/account/signup?roleId=${roleId}`, formSignUp);
 export const userInfo = () => api.get('/account/info');
 export const changeAvatar = (avatar) => api.patch('/user/avatar', avatar);
+export const changeNickname = (avatar) => api.patch('/user/nickname', avatar);
 export const changePassword = (newPassword, oldPassword) => api.patch(`/account/password?oldPassword=${oldPassword}`, newPassword);
 
 // response interceptor parsing the response data with JSONbigint, and returning the response

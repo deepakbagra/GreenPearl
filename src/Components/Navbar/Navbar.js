@@ -71,9 +71,9 @@ const Header = () => {
     {/* Top Bar */}
 
       <AppBar className={classes.topBar} position='fixed'  >             
-        <Paper  comonent='form' autoComplete='off' noValidate className={classes.searchBar}>
+        {/* <Paper  comonent='form' autoComplete='off' noValidate className={classes.searchBar}>
               <SearchBar />
-        </Paper>
+        </Paper> */}
 
         {/* top bar nav links */}
 

@@ -37,7 +37,7 @@ const PostForm = () => {
         e.preventDefault();
         
         dispatch(createBlog({ ...blogData, classId: classId }));
-        clear();        
+        dispatch(-1);        
     }
    
     return (

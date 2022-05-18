@@ -6,6 +6,7 @@ export const signIn = (formSignIn, navigate) => async (dispatch) => {
         const { data } = await api.signIn(formSignIn);
 
         console.log('sign in action', data);
+        console.log('sign in body', formSignIn);
        
         // sign in error message from server as string 
         if (data.code !== 200) return alert(data.msg);
@@ -39,6 +40,7 @@ export const signUp = (formData, roleId, navigate) => async (dispatch) => {
         const { data } = await api.signUp(formData, roleId);
 
         console.log('sign up action', data);
+        console.log('sign up body', formData);
         
         //dispatch({ type: AUTH });        
         
@@ -74,6 +76,23 @@ export const changeAvatar = (avatar) => async (dispatch) => {
             await dispatch({type: AVATAR, payload: 200})
             await dispatch(userInfo());            
             alert("Profile picture has been successfully updated.");
+        }
+       
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const changeNickname = (nickname) => async (dispatch) => {    
+    try {
+        // sign up in the user        
+        const { data } = await api.changeNickname(nickname);
+        
+        console.log('change nickname action', data); 
+        if (data?.code === 200) {
+            await dispatch({type: AVATAR, payload: 200})
+            await dispatch(userInfo());            
+            alert("Profile nickname has been successfully updated.");
         }
        
     } catch (error) {

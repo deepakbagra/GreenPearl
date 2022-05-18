@@ -10,6 +10,7 @@ import EditAvatar from './EditAvatar';
 import EditPassword from './editPassword';
 import './logoutmenu.css';
 import useStyles from './styles';
+import EditNickname from './editNickname';
 
 const LogoutMenu = (props) => {
   // for avatar modal
@@ -17,6 +18,9 @@ const LogoutMenu = (props) => {
 
   // for password modal
   const [modalOpenPwd, setModalOpenPwd] = useState(false);
+
+  // for nickname modal
+  const [modalOpenNickname, setModalOpenNickname] = useState(false);
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('userInfo')));
 
@@ -34,6 +38,13 @@ const LogoutMenu = (props) => {
 
   const handleModalOpen = () => {     
       setModalOpen(true); 
+  }
+
+  // modal related to nickname change page
+  const handleModalCloseNickname = () => { setModalOpenNickname(false) };
+
+  const handleModalOpenNickname = () => {     
+      setModalOpenNickname(true); 
   }
 
   // modal related to password change page
@@ -71,11 +82,18 @@ const LogoutMenu = (props) => {
             <EditPassword logout={props.logout} closePwd={handleModalClosePwd} />
           </>          
       </Modal>
+        
+        {/* nickname change modal page component  */}
+      <Modal className={classes.modal} open={modalOpenNickname}  onClose={handleModalCloseNickname}>
+          <>            
+            <EditNickname closeAd={handleModalCloseNickname} />
+          </>          
+      </Modal>
       
         <div className="log-dropdown-content">
             <button className="log-dropdown-content-btn " onClick={handleModalOpenPwd}>Change password</button>
             <button className="log-dropdown-content-btn" onClick={handleModalOpen}>Change avatar</button>
-            {/* <button className="log-dropdown-content-btn" onClick={handleModalOpen}>Change nickname</button>     */}
+            <button className="log-dropdown-content-btn" onClick={handleModalOpenNickname}>Set nickname</button>    
             <button className="log-dropdown-content-btn" onClick={props.logout}>Logout</button>
         </div>
       </div>

@@ -10,7 +10,7 @@ import React, { useEffect, useCallback , useState} from 'react';
 
 import {
   Card, CardActions, CardContent,
-  Button, Typography,
+  Button, Typography, Avatar
 } from '@material-ui/core';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
@@ -45,10 +45,15 @@ const Blog = () => {
   const handleModalOpenViewComment = () => { setModalOpenViewComment(true) };
   const handleModalCloseViewComment = () => { setModalOpenViewComment(false) }; 
   
-  console.log('blog =', blog);
-  
+  console.log('blog comment length =', blog?.comments.length);  
 
   const user = JSON.parse(localStorage.getItem('profile'));
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+  console.log('userInfo =', userInfo); 
+  const username = userInfo?.data?.user?.username;
+  const nickname = userInfo?.data?.user?.nickname;
+  const avatar = userInfo?.data?.avatar?.path;
   
   const blogId = localStorage.getItem('blogId');
   
@@ -57,27 +62,11 @@ const Blog = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  
-  // to check whether the user has already liked the blog before
-  // const isAlreadyLiked = useCallback(() => {
-  //   if (!blog?.likes?.length) {
-  //     return false;
-  //   }
-  //   else {
-  //     for (let i = 0; i < blog?.likes?.length; ++i) {
-  //       if (blog?.likes[i].toString().localeCompare(user?.data?.user?.id?.toString()) === 0) {
-          
-  //         return true;
-  //       }
-  //     }
-  //     return false;
-  //   }
-  // }, [blog?.likes, user?.data?.user?.id ]);
   
   // delete click event listener
   const onSubmitDeleteService = () => {
     dispatch(deleteBlog(blog?.id?.toString()));
+    navigate(-1);
   }
 
   // like click event listener
@@ -123,13 +112,18 @@ const Blog = () => {
             </Typography>
             <hr></hr>
           </div>
-          
-          <Typography gutterBottom multipleLine className={classes.contentText}>
+          <pre style={{ whiteSpace: "pre-wrap", wordWrap: "break-word"}}>
+          <Typography paragraph gutterBottom multipleLine className={classes.contentText}>
               {blog?.content}
-          </Typography>         
+            </Typography>
+            </pre>  
 
           <Typography style={{ fontSize: '0.9rem', color: 'grey', textAlign: 'right' }}>            
-            ... posted {moment.utc(blog?.createTime).local().fromNow()}
+            ... Posted by {nickname ? nickname : username} <br></br>          
+            ... {moment.utc(blog?.createTime).local().fromNow()}
+            <div style={{display: 'flex', justifyContent:'flex-end'}}>
+              <Avatar alt={username} src={avatar} />
+            </div>
           </Typography>
             
         </CardContent>
@@ -171,7 +165,7 @@ const Blog = () => {
           </div>
           {/* view comment action */}
           <div>          
-              <Button className={classes.btn} disabled={!user} color='secondary' onClick={handleModalOpenViewComment}>
+              <Button className={classes.btn} disabled={!user || !blog?.comments.length} color='secondary' onClick={handleModalOpenViewComment}>
               <CommentIcon className={classes.btn}/>
               <Typography className={classes.btnText}>view comments</Typography>
               </Button>
