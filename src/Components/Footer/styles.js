@@ -7,7 +7,7 @@ export default makeStyles(theme => ({
         textAlign: 'center', 
         display: 'flex',
         alignItems:'flexstart',        
-        marginTop: '10%',
+        marginTop: '5%',
         position: 'relative',
         bottom: '1rem',
         justifyContent: 'center',
@@ -18,7 +18,7 @@ export default makeStyles(theme => ({
         }            
     },
     text: {
-        fontSize: '0.6rem',       
+        fontSize: '0.8rem',       
         [theme.breakpoints.down('xs')]: {
             fontSize: '60%',
             marginTop: '0.9%'            

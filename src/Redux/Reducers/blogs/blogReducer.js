@@ -11,6 +11,14 @@ const blogReducer = (blogs = [], action) => {
         
         case Actions.DELETE_BLOG:            
             return blogs.filter(blog => blog.id.toString().localeCompare(action.payload) !== 0);
+        
+        case Actions.SEARCH:            
+        const filteredPosts = action?.payload !== '' ? blogs?.filter((blog) =>
+            blog?.title?.toLowerCase().includes(action.payload.toLowerCase())) : blogs;
+        
+        if (filteredPosts.length === 0) return [];  
+        
+        else return filteredPosts;
 
         default :
             return blogs ;

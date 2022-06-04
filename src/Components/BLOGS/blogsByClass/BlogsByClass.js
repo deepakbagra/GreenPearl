@@ -5,12 +5,12 @@ import Pagination from '@mui/material/Pagination';
 import { useDispatch } from 'react-redux';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { useNavigate } from 'react-router-dom';
+import SearchBar from '../search/SearchBarBlogs';
 
 
 import useStyles from './styles';
 import Blog from '../Blog';
 import { viewBlogsByClass } from '../../../Redux/Actions/blogActions';
-//import SearchBar from '../../SERVICES/search/SearchBarAllServices';
 
 const BlogsByClass = () => {
     
@@ -47,7 +47,7 @@ const BlogsByClass = () => {
             View Blogs
           </Typography>
           <Paper  comonent='form' autoComplete='off' noValidate className={classes.searchBar}>
-            {/* <SearchBar page={page} /> */}
+            <SearchBar page={page} classId={classId} />
           </Paper>
         </div>
         <hr style={{ marginTop: '2em' }}></hr>

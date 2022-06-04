@@ -31,6 +31,8 @@ import BlogsByClass from './Components/BLOGS/blogsByClass/BlogsByClass';
 import PostBlog from './Components/BLOGS/postBlog/BlogForm';
 import ViewBlog from './Components/BLOGS/viewChosenBlog';
 
+import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy'
+
 function App() {
   
   
@@ -62,6 +64,8 @@ function App() {
         <Route exact path='/class/show-blogs' element={<BlogsByClass />}></Route>
         <Route exact path='/class/create-blog' element={<PostBlog />}></Route>
         <Route exact path='/blogs/show-blog' element={<ViewBlog />}></Route>
+
+        <Route exact path='/privacy-policy' element={<PrivacyPolicy />}></Route>
 
     
         

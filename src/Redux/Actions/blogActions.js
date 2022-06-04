@@ -22,11 +22,12 @@ export const listClasses = () => async (dispatch) => {
 
 // show all blogs of a class 
 
-export const viewBlogsByClass = (id, page) => async (dispatch) => {  
+export const viewBlogsByClass = (id, page) => async (dispatch) => {
+    console.log('list page of blogs of a class action: ', page); 
     try {
         const { data } = await api.viewBlogsByClass(id, page);
         console.log('list blogs of a class action: ', data);
-        console.log('list page of blogs of a class action: ', page); 
+        
       
         dispatch({
             type: Actions.LIST_CLASS_BLOGS,

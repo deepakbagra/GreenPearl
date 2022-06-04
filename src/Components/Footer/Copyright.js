@@ -1,15 +1,20 @@
-import { Typography } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
+import { useNavigate } from 'react-router-dom';
 import useStyle from './styles';
 
 const Copyright = () => {
     const classes = useStyle();
+    const navigate = useNavigate();
    
     return (
         <div className={classes.root}>
             <Typography className={classes.text}>
                 {new Date().getFullYear()}  
-                {'Copyright © '}
-                | autism-social-plateform | All Rights Reserved.
+                {', Copyright © '}
+                | monajamshaid.info | All Rights Reserved |
+                <Button onClick={() => navigate('/privacy-policy')}>                 
+                        <Typography style={{color:'white', fontSize:'0.8rem'}}>Privacy Policy</Typography>
+                </Button>
             </Typography>
         </div>
     )

@@ -4,7 +4,7 @@ import { deepPurple } from '@material-ui/core/colors';
 export default makeStyles((theme) => ({
     appBar: {        
         zIndex: '5',
-        background: '#424242',
+        background: 'white',
         boxShadow: 'none',
         marginBottom: '2rem',
         marginTop: '2rem',       
@@ -24,7 +24,7 @@ export default makeStyles((theme) => ({
     },
     topBar: {
        
-        background: '#424242',
+        background: 'white',
         boxShadow: 'none',
         display: 'flex',
         flexDirection: 'row',
@@ -135,8 +135,8 @@ export default makeStyles((theme) => ({
         
     },
     topNavLinksButton: {
-        textTransform: 'none',         
-        color: '#fafafa',        
+                 
+        color: 'black',        
         fontSize: '0.8em',
     },
     account: {        
@@ -164,9 +164,8 @@ export default makeStyles((theme) => ({
             left: '95%',
         },
     },
-    auth: {                
-        textTransform: 'none',
-        color: '#fafafa',        
+    auth: {
+        color: 'black',        
         fontSize: '0.8em',        
     },
     authMenu: {
@@ -192,7 +191,7 @@ export default makeStyles((theme) => ({
         width: '100px',
     },
     brand: {
-        height: '3rem',
+        height: '5rem',
         background: 'white',
         [theme.breakpoints.down('xs')]: {
             height: '2rem',            
@@ -200,12 +199,12 @@ export default makeStyles((theme) => ({
     },
     button: {
         fontSize: '0.9em',
-        color: '#fafafa',
-        textTransform: 'none',      
+        color: 'black',
+             
     },
     homeIcon: {
         fontSize: '1em',
-        color: '#eeeeee'
+        color: 'black'
     },
    
     

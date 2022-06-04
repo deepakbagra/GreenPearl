@@ -12,7 +12,7 @@ const BrandName = () => {
   return (
     <>
       <img src={brandLogo} alt='Autism Platform' className={classes.brand} />
-      <h3 style={{color: '#eeeeee', fontStyle: 'italic', marginLeft: '-17em'}}>Green Pearls Consulting</h3>
+      {/* <h3 style={{color: 'green', fontStyle: 'italic', marginLeft: '-17em'}}>Green Pearls Consulting</h3> */}
     </>
     
       
