@@ -81,15 +81,10 @@ const Header = () => {
           {/* <Button component={Link} to='/contact' color='primary' className={classes.topNavLinksButton}>Contact</Button> */}
           {/* <Button component={Link} to='/aboutus' color='primary' className={classes.topNavLinksButton}>About</Button> */}
         </div>
-<<<<<<< HEAD
         {/* <div>
-          <a href="http://81.68.206.216:10010/" target="_blank" rel="noreferrer"><Button className={classes.auth} variant='text' >Admin Dashboard</Button>
-=======
-        <div>
           <a style={{textDecoration:'none'}} href="http://81.68.206.216:10010/" target="_blank" rel="noreferrer"><Button style={{background: 'white'}} className={classes.auth} variant='text' >Admin Dashboard</Button>
->>>>>>> 7ab053bb395abf7b231247e93b462130b3498e5f
             </a>
-        </div> */}
+        </div>  */}
         
 
         {/* Login button */}
