@@ -39,13 +39,13 @@ export const signUp = (formData, roleId, navigate) => async (dispatch) => {
         // sign up in the user        
         const { data } = await api.signUp(formData, roleId);
 
-        console.log('sign up action', data);
-        console.log('sign up body', formData);
-        
-        //dispatch({ type: AUTH });        
-        
-        navigate('/auth/signin');
+        console.log('sign up action', data);       
+      
+        if (data?.code === 200)
+            navigate('/auth/signin');
+        else alert(data?.msg);
     } catch (error) {
+        alert("User already exists !")
         console.log(error)
     }
 }

@@ -24,7 +24,7 @@ const ViewComments = ({ close, blog }) => {
           <Grid item                       
                 xs={12}  >
             <Comment comment={comment} close={close} />
-            <hr style={{margin: '2em'}}></hr>
+            <hr style={{marginTop: '6em'}}></hr>
             </Grid>
       )) }
             </Grid>

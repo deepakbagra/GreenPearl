@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
     container: {
         background: 'white',
-        marginTop: '7.1rem',
+        marginTop: '9.1rem',
     },
     banner: {
         height: '20rem',        

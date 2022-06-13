@@ -48,7 +48,7 @@ export default makeStyles((theme) => ({
         [theme.breakpoints.between('md', 'lg')]: {
             
             width: '20em',
-            height: '14em'
+            height: '10em'
         },
     },
     card2: {
@@ -315,7 +315,8 @@ export default makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-between',    
         width: '70%',       
-        margin: 'auto',
+        marginLeft: '6em',
+        marginTop: '2em'
         //overflowY: 'scroll',
     },
     paper: {

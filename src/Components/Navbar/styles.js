@@ -128,10 +128,12 @@ export default makeStyles((theme) => ({
     },
     navLinks: {        
         display: 'flex',
-        marginLeft: '-13em'
+        marginLeft: '-33em'
     },    
     topNavLinks: {        
         display: 'flex',
+       
+        
         
     },
     topNavLinksButton: {
@@ -166,7 +168,8 @@ export default makeStyles((theme) => ({
     },
     auth: {
         color: 'black',        
-        fontSize: '0.8em',        
+        fontSize: '0.8em',
+        backgroundColor: 'white'
     },
     authMenu: {
         fontSize: '0.72rem',        
@@ -175,8 +178,8 @@ export default makeStyles((theme) => ({
         margin: 'auto'
     },
     avatar: {
-        color: theme.palette.getContrastText(deepPurple[600]),
-        backgroundColor: deepPurple[600],
+        //color: theme.palette.getContrastText(deepPurple[600]),
+        //backgroundColor: deepPurple[600],
         width: '1.7em',
         height: '1.7em',
         marginTop: '15%',
@@ -200,6 +203,7 @@ export default makeStyles((theme) => ({
     button: {
         fontSize: '0.9em',
         color: 'black',
+        
              
     },
     homeIcon: {

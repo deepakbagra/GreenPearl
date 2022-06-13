@@ -7,6 +7,8 @@ import EventIcon from '@mui/icons-material/Event';
 
 import { createBlog } from '../../../Redux/Actions/blogActions';
 
+import { useNavigate } from 'react-router-dom';
+
 // initial state of user input 
 const initialState = {
     title: '',
@@ -20,6 +22,7 @@ const PostForm = () => {
    
     const classes = useStyles();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
    
     
     const clear = () => {
@@ -37,7 +40,8 @@ const PostForm = () => {
         e.preventDefault();
         
         dispatch(createBlog({ ...blogData, classId: classId }));
-        dispatch(-1);        
+        clear();
+        navigate(-1);      
     }
    
     return (

@@ -49,7 +49,7 @@ const Comment = ({ comment, close }) => {
                                 {comment?.parentComment?.content}
                             </Typography>
                             <Typography style={{ fontSize: '0.7rem', color: 'grey' }}>
-                                Commented by {username}  {moment.utc(comment?.parentComment?.createTime).local().fromNow()}...
+                                Commented by {comment?.parentComment?.creator?.nickname}  {moment.utc(comment?.parentComment?.createTime).local().fromNow()}...
                             </Typography>
                         </div>
                     </CardContent>
@@ -87,16 +87,16 @@ const Comment = ({ comment, close }) => {
                             {commentChild?.content}
                         </Typography>
                         <Typography style={{ fontSize: '0.6rem', color: 'grey', marginLeft:'1.4em' }}>
-                            Recommented by {username}  {moment.utc(commentChild?.createTime).local().fromNow()}...
+                            Recommented by {commentChild?.creator?.nickname}  {moment.utc(commentChild?.createTime).local().fromNow()}...
                         </Typography>
-                        <Button className={classes.btnChild}
+                        {/* <Button className={classes.btnChild}
                             variant='inherit'
                             color='primary'
                             onClick={handleModalOpenChildComment}>
                             <Typography style={{marginLeft: '1.4em'}} className={classes.moreChild}>
                                 Comment Back
                             </Typography>
-                        </Button>
+                        </Button> */}
                         <hr></hr>
                         <Modal className={classes.modal} open={modalOpenChildComment} onClose={handleModalCloseChildComment}>
                         <>             

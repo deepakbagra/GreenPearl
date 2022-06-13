@@ -81,8 +81,13 @@ const Header = () => {
           {/* <Button component={Link} to='/contact' color='primary' className={classes.topNavLinksButton}>Contact</Button> */}
           {/* <Button component={Link} to='/aboutus' color='primary' className={classes.topNavLinksButton}>About</Button> */}
         </div>
+<<<<<<< HEAD
         {/* <div>
           <a href="http://81.68.206.216:10010/" target="_blank" rel="noreferrer"><Button className={classes.auth} variant='text' >Admin Dashboard</Button>
+=======
+        <div>
+          <a style={{textDecoration:'none'}} href="http://81.68.206.216:10010/" target="_blank" rel="noreferrer"><Button style={{background: 'white'}} className={classes.auth} variant='text' >Admin Dashboard</Button>
+>>>>>>> 7ab053bb395abf7b231247e93b462130b3498e5f
             </a>
         </div> */}
         
@@ -90,14 +95,14 @@ const Header = () => {
         {/* Login button */}
         
         {user?.code === 200 ?         
-          <Button variant='text' className={classes.auth} color='secondary'>
+          <Button style={{background: 'white'}} className={classes.auth} color='secondary'>
             <LogoutMenu logout={logout} />
           </Button>
              :  
             <div className={classes.account}>
               
-                <Button className={classes.auth} component={Link} to='/auth/signin' variant='text' >Sign In</Button>
-                <Button className={classes.auth} component={Link} to='/auth/signup' variant='text' >Create a new Account</Button>
+                <Button style={{background: 'white'}} className={classes.auth} component={Link} to='/auth/signin' variant='text' >Sign In</Button>
+                <Button style={{background: 'white'}} className={classes.auth} component={Link} to='/auth/signup' variant='text' >Create a new Account</Button>
                    
               </div>             
           }
@@ -111,12 +116,12 @@ const Header = () => {
       {/* nav links  */}
 
         <div className={classes.navLinks}>
-          <IconButton component={Link} to='/'><HomeIcon className={classes.homeIcon}/></IconButton>
+          <IconButton  component={Link} to='/'><HomeIcon className={classes.homeIcon}/></IconButton>
           <Button  ><AboutAutism /></Button>
-          <Button component={Link} to='/support' ><Resources /></Button>
-          <Button className={classes.button}><Event /></Button>          
-          <Button className={classes.button}><Service /></Button>
-          <Button component={Link} to='/blog' className={classes.button}>Blog</Button>
+          <Button  ><Resources /></Button>
+          <Button  className={classes.button}><Event /></Button>          
+          <Button  className={classes.button}><Service /></Button>
+          <Button  component={Link} to='/blog' className={classes.button}>Blog</Button>
         </div>
       </AppBar>
     </>

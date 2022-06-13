@@ -62,7 +62,7 @@ const LogoutMenu = (props) => {
 
 
   return (
-    <div style={{marginLeft: '29em'}}>
+    <div style={{marginLeft: '0em'}}>
     <div className="log-dropdown">
       <>
         <div className="log-dropbtn">

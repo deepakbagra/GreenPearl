@@ -35,7 +35,7 @@ const Blog = () => {
   const [modalOpenParentComment, setModalOpenParentComment] = useState(false);
   const [modalOpenViewComment, setModalOpenViewComment] = useState(false);
   const blog = useSelector(state => state.viewBlog);
-  
+  console.log('blog = ', blog)
 
   //Modal toggle settings for parent comment tag
   const handleModalOpenParentComment = () => { setModalOpenParentComment(true) };
@@ -47,13 +47,14 @@ const Blog = () => {
   
   console.log('blog comment length =', blog?.comments.length);  
 
-  const user = JSON.parse(localStorage.getItem('profile'));
-  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+  
+  const user = JSON.parse(localStorage.getItem('userInfo'));
+  const user_profile = JSON.parse(localStorage.getItem('profile'));
 
-  console.log('userInfo =', userInfo); 
-  const username = userInfo?.data?.user?.username;
-  const nickname = userInfo?.data?.user?.nickname;
-  const avatar = userInfo?.data?.avatar?.path;
+  console.log('user =', user); 
+  
+  const nickname = blog?.creator?.nickname;
+  const avatar = blog?.creator?.avatar;
   
   const blogId = localStorage.getItem('blogId');
   
@@ -119,10 +120,10 @@ const Blog = () => {
             </pre>  
 
           <Typography style={{ fontSize: '0.9rem', color: 'grey', textAlign: 'right' }}>            
-            ... Posted by {nickname ? nickname : username} <br></br>          
+            ... Posted by {nickname } <br></br>          
             ... {moment.utc(blog?.createTime).local().fromNow()}
             <div style={{display: 'flex', justifyContent:'flex-end'}}>
-              <Avatar alt={username} src={avatar} />
+              <Avatar alt={nickname} src={avatar} />
             </div>
           </Typography>
             
@@ -130,12 +131,12 @@ const Blog = () => {
 
         <CardActions className={classes.actions} >
           
-          <Button className={classes.btn} disabled={!user && !isMyOwnBlog()} color='secondary' onClick={onSubmitDeleteService}>
+          <Button className={classes.btn} disabled={!isMyOwnBlog()} color='secondary' onClick={onSubmitDeleteService}>
             <DeleteIcon className={classes.btn} />
             <Typography className={classes.btnText}>delete</Typography>
           </Button>
           
-          <Button className={classes.btn} disabled={!user} color='secondary' onClick={onSubmitLike}>
+          <Button className={classes.btn} disabled={!user_profile} color='secondary' onClick={onSubmitLike}>
             <ThumbUpIcon className={classes.btn} />
             <div style={{marginRight: '0.3em'}}>{blog?.likeCount}</div>
             {blog?.likeCount < 2 ?
@@ -145,14 +146,14 @@ const Blog = () => {
             }            
           </Button>
 
-          <Button className={classes.btn} disabled={!user} color='secondary' onClick={onSubmitDislike}>
+          {/* <Button className={classes.btn} disabled={!user_profile} color='secondary' onClick={onSubmitDislike}>
             <ThumbDownIcon className={classes.btn} />
             <Typography className={classes.btnText}>dislike</Typography>
-          </Button>
+          </Button> */}
 
           {/* post comment action */}
           <div>          
-              <Button className={classes.btn} disabled={!user} color='secondary' onClick={handleModalOpenParentComment}>
+              <Button className={classes.btn} disabled={!user_profile} color='secondary' onClick={handleModalOpenParentComment}>
               <CommentIcon className={classes.btn}/>
               <Typography className={classes.btnText}>post comment</Typography>
               </Button>
@@ -165,7 +166,7 @@ const Blog = () => {
           </div>
           {/* view comment action */}
           <div>          
-              <Button className={classes.btn} disabled={!user || !blog?.comments.length} color='secondary' onClick={handleModalOpenViewComment}>
+              <Button className={classes.btn} disabled={!user_profile || !blog?.comments.length} color='secondary' onClick={handleModalOpenViewComment}>
               <CommentIcon className={classes.btn}/>
               <Typography className={classes.btnText}>view comments</Typography>
               </Button>
