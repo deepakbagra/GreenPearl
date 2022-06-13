@@ -132,7 +132,7 @@ export default makeStyles((theme) => ({
     },    
     topNavLinks: {        
         display: 'flex',
-        marginLeft: '2em'
+        marginLeft: '34em'
         
         
     },
