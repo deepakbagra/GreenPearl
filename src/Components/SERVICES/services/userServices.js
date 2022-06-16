@@ -13,7 +13,9 @@ import useStyles from './styles';
 
 const UserServices = () => {
   
-  const services = useSelector(state => state.viewUserServices);
+  let services = useSelector(state => state.viewUserServices);
+
+  services = services?.services
 
   // filtering audited services
   const auditedServices = services?.filter((service) => service.auditStatus === 1);
