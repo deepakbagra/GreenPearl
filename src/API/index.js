@@ -44,7 +44,7 @@ export const createService = (newPost) => api.post('/service', newPost);
 export const listServices = (pageNumber) => api.get(`/service?auditStatus=1&pageNumber=${pageNumber}&pageSize=3`);
 export const viewService = (id) => api.get(`/service/${id}`);
 export const deleteService = (id) => api.delete(`/service/${id}`);
-export const listUserServices = () => api.get('/service/user');
+export const listUserServices = () => api.get('/service/user?pageNumber=1&pageSize=9999');
 
 
 // blog related
