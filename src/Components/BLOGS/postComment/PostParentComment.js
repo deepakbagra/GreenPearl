@@ -53,7 +53,7 @@ const PostForm = ({ closeEdit, blogId }) => {
                 <Button className={classes.button}
                     variant='contained'
                     color='primary'
-                    type='sumbit'
+                    type='SUBMIT'
                     size='small'
                                         
                     > Post Comment

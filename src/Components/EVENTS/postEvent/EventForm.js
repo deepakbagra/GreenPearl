@@ -179,7 +179,7 @@ const PostForm = () => {
                     type='Post Event'
                     size='small'
                     fullWidth
-                > Sumbit
+                > SUBMIT
                 </Button>
             </form>
         </Container>

@@ -82,7 +82,7 @@ const PostForm = () => {
                     type='Post Blog'
                     size='small'
                     fullWidth
-                > Sumbit
+                > SUBMIT
                 </Button>
             </form>
         </Container>
